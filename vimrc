@@ -1,4 +1,6 @@
-" Enable plugins
+" Load Pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+" Load all Pathogen-enabled plugins
 execute pathogen#infect()
 " I like colors
 syntax on
