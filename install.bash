@@ -23,6 +23,7 @@ else
   [ ! -e "$HOME/.bash_aliases" ] && ln -s "$_repo/bash_aliases" "$HOME/.bash_aliases"
   [ ! -e "$HOME/.vimrc" ] && ln -s "$_repo/vimrc" "$HOME/.vimrc"
   [ ! -e "$HOME/.toprc" ] && ln -s "$_repo/toprc" "$HOME/.toprc"
+  [ ! -e "$HOME/.tmux.conf" ] && ln -s "$_repo/tmux.conf" "$HOME/.tmux.conf"
 fi
 
 # vim:ts=2:sw=2:et
