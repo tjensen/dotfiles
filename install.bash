@@ -1,9 +1,6 @@
-# Install VIM plugins
+# Install Vundle plugin for VIM
 mkdir -p "$HOME/.vim/bundle"
-for url in https://github.com/tpope/vim-pathogen https://github.com/ciaranm/inkpot git://repo.or.cz/vcscommand; do
-  _url_base=$(basename $url)
-  [ ! -d "$HOME/.vim/bundle/$_url_base" ] && git clone $url "$HOME/.vim/bundle/$_url_base"
-done
+[ ! -d "$HOME/.vim/bundle/Vundle.vim" ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 if [ -z "$BASH_SOURCE" ]; then
   echo "Unable to determine location of install script!"
