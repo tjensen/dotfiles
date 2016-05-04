@@ -1,7 +1,20 @@
-" Load Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-" Load all Pathogen-enabled plugins
-execute pathogen#infect()
+"""" Begin Vundle Setup Requirements
+set nocompatible
+filetype on
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ciaranm/inkpot'
+Plugin 'andviro/flake8-vim'
+Plugin 'scrooloose/syntastic'
+call vundle#end()
+filetype plugin indent on
+"""" End Vundle Setup Requirements
+
 " I like colors
 syntax on
 colorscheme inkpot
