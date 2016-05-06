@@ -62,5 +62,34 @@ nnoremap <F11> <C-W><C-F><C-W>_5<C-W>-:setlocal number<CR>:VCSVimDiff $BRANCHED_
 nnoremap <F12> <C-W><C-B>:only<CR>
 " Standard convention for code indentation
 set tabstop=4 shiftwidth=4 expandtab
+
+" Python stuff
+autocmd FileType python set shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType python setlocal textwidth=99 colorcolumn=101
+highlight BadWhitespace ctermbg=red guibg=red
+autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.js match BadWhitespace /\s\+$/
+let g:pyindent_open_paren = 'shiftwidth()'
+
+" Flake8
+let g:PyFlakeCheckers = 'pep8,pyflakes'
+let g:PyFlakeDisabledMessages = 'E309,E501'
+let g:PyFlakeMaxLineLength = 100
+
+" Syntastic
+let g:syntastic_python_flake8_args = '--ignore=E309,E501'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Allow for system-specific settings that shouldn't be shared everywhere
+if filereadable(glob("~/.vimrc_local"))
+  source ~/.vimrc_local
+endif
+
 "
 " vim:ts=2:sw=2:et
