@@ -43,8 +43,6 @@ if exists('+colorcolumn')
 endif
 " Jump to open window containing specified buffer, else split a new window
 set switchbuf=useopen,split
-" Indenting is good
-filetype plugin indent on
 " SWIG .i files
 autocmd BufRead,BufNewFile *.i set filetype=swig
 " Jump to last known position in file, if available
