@@ -11,6 +11,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ciaranm/inkpot'
 Plugin 'andviro/flake8-vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'linediff.vim'
+Plugin 'vim-airline/vim-airline'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
