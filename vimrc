@@ -86,6 +86,7 @@ let g:airline_detect_paste=1
 let g:airline_inactive_collapse=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#syntastic#enabled=1
+let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
 " Allow for system-specific settings that shouldn't be shared everywhere
