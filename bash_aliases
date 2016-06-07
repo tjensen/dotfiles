@@ -1,6 +1,8 @@
 alias ll='ls -l'
 alias la='ls -la'
 
+alias grep='grep --color=auto'
+
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gci='git commit --interactive'
