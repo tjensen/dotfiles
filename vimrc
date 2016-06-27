@@ -73,6 +73,7 @@ let g:PyFlakeMaxLineLength = 100
 
 " Syntastic
 let g:syntastic_python_flake8_args = '--ignore=E309,E501'
+let g:syntastic_python_python_exec = 'python3'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
