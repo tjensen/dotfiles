@@ -8,5 +8,7 @@ alias gca='git commit -v -a'
 alias gci='git commit --interactive'
 alias gd='git diff'
 
+alias wo='workon $(basename $PWD)'
+
 # Allow for system-specific aliases that shouldn't be shared everywhere
 [ -e "$HOME/.bash_aliases_local" ] && source "$HOME/.bash_aliases_local"
