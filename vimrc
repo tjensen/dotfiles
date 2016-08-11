@@ -14,6 +14,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'linediff.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'powerline/fonts'
+Plugin 'pangloss/vim-javascript'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
@@ -57,14 +58,26 @@ let g:xml_syntax_folding=1
 au FileType xml if line('$') < 10000 | setlocal foldmethod=syntax | endif
 " Standard convention for code indentation
 set tabstop=4 shiftwidth=4 expandtab
+" For toggling paste mode
+nnoremap <silent> <leader>pp :setlocal paste!<CR>
+
+" YAML stuff
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" SCSS stuff
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python stuff
-autocmd FileType python set shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType python setlocal textwidth=99 colorcolumn=101
 highlight BadWhitespace ctermbg=red guibg=red
 autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.js match BadWhitespace /\s\+$/
 let g:pyindent_open_paren = 'shiftwidth()'
+
+" Javascript stuff
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal colorcolumn=101 textwidth=99
 
 " Flake8
 let g:PyFlakeCheckers = 'pep8,pyflakes'
@@ -72,6 +85,7 @@ let g:PyFlakeDisabledMessages = 'E309,E501'
 let g:PyFlakeMaxLineLength = 100
 
 " Syntastic
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_flake8_args = '--ignore=E309,E501'
 let g:syntastic_python_python_exec = 'python3'
 set statusline+=%#warningmsg#
