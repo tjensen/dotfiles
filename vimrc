@@ -85,7 +85,12 @@ let g:PyFlakeDisabledMessages = 'E309,E501'
 let g:PyFlakeMaxLineLength = 100
 
 " Syntastic
-let g:syntastic_javascript_checkers = ['eslint']
+if filereadable('.eslintrc')
+  let g:syntastic_javascript_checkers = ['eslint']
+endif
+if !empty(glob('node_modules/.bin/eslint'))
+  let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+endif
 let g:syntastic_python_flake8_args = '--ignore=E309,E501'
 let g:syntastic_python_python_exec = 'python3'
 set statusline+=%#warningmsg#
