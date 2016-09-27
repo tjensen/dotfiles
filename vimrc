@@ -93,7 +93,7 @@ if !empty(glob('node_modules/.bin/eslint'))
   let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
 endif
 let g:syntastic_python_flake8_args = '--ignore=E309,E501'
-let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_python_exec = 'python'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
