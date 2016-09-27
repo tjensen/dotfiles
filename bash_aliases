@@ -2,6 +2,7 @@ alias ll='ls -l'
 alias la='ls -la'
 
 alias grep='grep --color=auto'
+alias ag='grep --exclude=*.pyc --exclude-dir=__pycache__ --exclude-dir=.git --recursive'
 
 alias gc='git commit -v'
 alias gca='git commit -v -a'
