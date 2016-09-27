@@ -15,6 +15,7 @@ Plugin 'linediff.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'powerline/fonts'
 Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
