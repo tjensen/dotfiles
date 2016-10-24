@@ -1,3 +1,5 @@
+[ -e "$HOME/.bashrc_secure" ] && source "$HOME/.bashrc_secure"
+
 # Force 256-color capability -- this might break some stuff?
 [ "$TERM" = "xterm" ] && TERM=xterm-256color
 [ "$TERM" = "screen" ] && TERM=screen-256color
