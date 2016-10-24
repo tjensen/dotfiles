@@ -65,6 +65,9 @@ nnoremap <silent> <leader>pp :setlocal paste!<CR>
 " YAML stuff
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" HTML stuff
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 " SCSS stuff
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
