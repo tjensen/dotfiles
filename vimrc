@@ -95,6 +95,8 @@ endif
 if !empty(glob('node_modules/.bin/eslint'))
   let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
 endif
+let g:syntastic_html_checkers = []
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore=E309,E501'
 let g:syntastic_python_python_exec = 'python'
 set statusline+=%#warningmsg#
