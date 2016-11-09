@@ -23,8 +23,6 @@ filetype plugin indent on
 " I like colors
 syntax on
 colorscheme inkpot
-" Show cursor position on the status line
-set ruler
 " Show unprintable characters
 set list listchars=trail:·,tab:»-
 " Always show the status line
