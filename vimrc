@@ -65,6 +65,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " HTML stuff
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html if line('$') < 5000 | :syntax sync fromstart | endif
 
 " SCSS stuff
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -87,13 +88,15 @@ let g:PyFlakeDisabledMessages = 'E309,E501'
 let g:PyFlakeMaxLineLength = 100
 
 " Syntastic
+let g:syntastic_html_checkers = []
 if filereadable('.eslintrc')
   let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_html_checkers = ['eslint']
 endif
 if !empty(glob('node_modules/.bin/eslint'))
   let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+  let g:syntastic_html_eslint_exec = 'node_modules/.bin/eslint'
 endif
-let g:syntastic_html_checkers = []
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore=E309,E501'
 let g:syntastic_python_python_exec = 'python'
