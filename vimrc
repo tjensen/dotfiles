@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'powerline/fonts'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'Vimjas/vim-python-pep8-indent'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
