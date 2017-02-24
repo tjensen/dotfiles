@@ -63,6 +63,7 @@ nnoremap <silent> <leader>pp :setlocal paste!<CR>
 
 " YAML stuff
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType yaml setlocal foldmethod=indent foldlevel=99
 
 " HTML stuff
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
