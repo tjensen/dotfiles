@@ -78,7 +78,6 @@ autocmd FileType python setlocal textwidth=99 colorcolumn=101
 highlight BadWhitespace ctermbg=red guibg=red
 autocmd BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.js match BadWhitespace /\s\+$/
-let g:pyindent_open_paren = 'shiftwidth()'
 
 " Javascript stuff
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -100,7 +99,6 @@ if !empty(glob('node_modules/.bin/eslint'))
   let g:syntastic_html_eslint_exec = 'node_modules/.bin/eslint'
 endif
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore=E309,E501'
 let g:syntastic_python_python_exec = 'python'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
