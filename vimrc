@@ -17,6 +17,7 @@ Plugin 'powerline/fonts'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'vim-scripts/vim-coffee-script'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
@@ -82,6 +83,10 @@ autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.js match BadWhitespace /\s\+$/
 " Javascript stuff
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal colorcolumn=101 textwidth=99
+
+" Coffeescript stuff
+autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType coffee setlocal colorcolumn=101 textwidth=99
 
 " Flake8
 let g:PyFlakeCheckers = 'pep8,pyflakes'
