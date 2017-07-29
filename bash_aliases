@@ -9,6 +9,7 @@ alias gci='git commit --interactive'
 alias gd='git diff'
 
 alias wo='workon $(basename $PWD)'
+alias mkv='mkvirtualenv $(basename $PWD)'
 
 alias docker-clean='docker ps -a | grep '\''weeks ago'\'' | awk '\''{print }'\'' | xargs docker rm'
 alias docker-pull="grep -Irn 'image: .*amazonaws.com' deployment/*.yaml | sed 's/.*image: \(.*\)/\1/' | xargs -n 1 docker pull"
