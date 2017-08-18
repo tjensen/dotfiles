@@ -15,5 +15,14 @@ alias docker-clean='docker ps -a | grep '\''weeks ago'\'' | awk '\''{print }'\''
 alias docker-env='eval $(minikube docker-env)'
 alias ecr-login='eval $(aws ecr get-login)'
 
+function show-cert {
+    if [ -z "$1" ]
+    then
+        1>&2 echo "Hostname required"
+    else
+        echo | openssl s_client -showcerts -servername $1 -connect $1:443 2>/dev/null | openssl x509 -inform pem -noout -text
+    fi
+}
+
 # Allow for system-specific aliases that shouldn't be shared everywhere
 [ -e "$HOME/.bash_aliases_local" ] && source "$HOME/.bash_aliases_local"
