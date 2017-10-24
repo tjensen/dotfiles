@@ -95,7 +95,7 @@ let g:PyFlakeMaxLineLength = 100
 
 " Syntastic
 let g:syntastic_html_checkers = []
-if filereadable('.eslintrc')
+if filereadable('.eslintrc') || filereadable('.eslintrc.yaml')
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_html_checkers = ['eslint']
 endif
