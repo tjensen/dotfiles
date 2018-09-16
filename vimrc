@@ -55,9 +55,6 @@ autocmd BufRead,BufNewFile *.i set filetype=swig
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " C/C++ comment continuation rules
 au FileType c,cpp set comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,f://
-" XML folding
-let g:xml_syntax_folding=1
-au FileType xml if line('$') < 10000 | setlocal foldmethod=syntax | endif
 " Standard convention for code indentation
 set tabstop=4 shiftwidth=4 expandtab
 " For toggling paste mode
