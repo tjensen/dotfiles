@@ -64,6 +64,9 @@ nnoremap <silent> <leader>pp :setlocal paste!<CR>
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType yaml setlocal foldmethod=indent foldlevel=99
 
+" JSON stuff
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 " HTML stuff
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html if line('$') < 5000 | :syntax sync fromstart | endif
