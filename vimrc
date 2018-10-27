@@ -89,6 +89,9 @@ autocmd FileType javascript setlocal colorcolumn=101 textwidth=99
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType coffee setlocal colorcolumn=101 textwidth=99
 
+" Markdown stuff
+let g:vim_markdown_folding_disabled = 1
+
 " Flake8
 let g:PyFlakeCheckers = 'pep8,pyflakes'
 let g:PyFlakeDisabledMessages = 'E309,E501'
