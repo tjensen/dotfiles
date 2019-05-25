@@ -93,7 +93,7 @@ let g:vim_markdown_folding_disabled = 1
 
 " Syntastic
 let g:syntastic_html_checkers = []
-if filereadable('.eslintrc') || filereadable('.eslintrc.yaml')
+if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc')
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_html_checkers = ['eslint']
 endif
