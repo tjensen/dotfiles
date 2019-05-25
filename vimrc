@@ -9,7 +9,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ciaranm/inkpot'
-Plugin 'andviro/flake8-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'linediff.vim'
 Plugin 'vim-airline/vim-airline'
@@ -91,11 +90,6 @@ autocmd FileType coffee setlocal colorcolumn=101 textwidth=99
 
 " Markdown stuff
 let g:vim_markdown_folding_disabled = 1
-
-" Flake8
-let g:PyFlakeCheckers = 'pep8,pyflakes'
-let g:PyFlakeDisabledMessages = 'E309,E501'
-let g:PyFlakeMaxLineLength = 100
 
 " Syntastic
 let g:syntastic_html_checkers = []
