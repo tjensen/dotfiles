@@ -29,6 +29,10 @@ filetype plugin indent on
 
 " I like colors
 syntax on
+if has('win32') || has('win64')
+  " Windows 10 console now supports 24-bit color!
+  set t_Co=256
+endif
 if has("gui_running") || &t_Co > 16
   colorscheme inkpot
 else
