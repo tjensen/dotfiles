@@ -28,7 +28,7 @@ filetype plugin indent on
 
 " I like colors
 syntax on
-if &t_Co > 16
+if has("gui_running") || &t_Co > 16
   colorscheme inkpot
 else
   colorscheme elflord
