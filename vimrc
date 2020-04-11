@@ -3,7 +3,11 @@ set nocompatible
 filetype on
 filetype off
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if has('win32') || has('win64')
+  set rtp+=~/vimfiles/bundle/Vundle.vim
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
+endif
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -24,7 +28,13 @@ filetype plugin indent on
 
 " I like colors
 syntax on
-colorscheme inkpot
+if &t_Co > 16
+  colorscheme inkpot
+else
+  colorscheme elflord
+endif
+" UTF-8 Everywhere!
+set encoding=utf-8
 " Show unprintable characters
 set list listchars=trail:·,tab:»-
 " Always show the status line
