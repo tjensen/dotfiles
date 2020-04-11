@@ -22,6 +22,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'vim-scripts/vim-coffee-script'
+Plugin 'hashivim/vim-terraform'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
