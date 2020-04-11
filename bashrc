@@ -11,6 +11,8 @@ export LSCOLORS="ExGxFxdxCxDxDxhbadacec"
 
 export FIGNORE=.pyc
 
+export GPG_TTY=$(tty)
+
 ######################################################################
 function timer_start {
     timer=${timer:-$SECONDS}
