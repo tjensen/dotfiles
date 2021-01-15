@@ -103,6 +103,14 @@ autocmd FileType javascript setlocal colorcolumn=101 textwidth=99
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType coffee setlocal colorcolumn=101 textwidth=99
 
+" Java stuff
+autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType java setlocal colorcolumn=101 textwidth=99
+
+" Objective C stuff
+autocmd FileType objc setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType objc setlocal colorcolumn=101 textwidth=99
+
 " Markdown stuff
 let g:vim_markdown_folding_disabled = 1
 
