@@ -2,6 +2,7 @@
 set nocompatible
 filetype on
 filetype off
+packadd! matchit
 " set the runtime path to include Vundle and initialize
 if has('win32') || has('win64')
   set rtp+=~/vimfiles/bundle/Vundle.vim
