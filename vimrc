@@ -115,6 +115,9 @@ autocmd FileType objc setlocal colorcolumn=101 textwidth=99
 " Markdown stuff
 let g:vim_markdown_folding_disabled = 1
 
+" C stuff
+autocmd FileType c setlocal textwidth=99 colorcolumn=101
+
 " Syntastic
 let g:syntastic_html_checkers = []
 if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc')
