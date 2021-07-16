@@ -26,9 +26,9 @@ function timer_stop {
 trap 'timer_start' DEBUG
 
 if [ "$PROMPT_COMMAND" == "" ]; then
-    PROMPT_COMMAND="timer_stop"
+    PROMPT_COMMAND="timer_stop;"
 else
-    PROMPT_COMMAND="$PROMPT_COMMAND; timer_stop"
+    PROMPT_COMMAND="$PROMPT_COMMAND timer_stop;"
 fi
 
 shopt -s promptvars
