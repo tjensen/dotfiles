@@ -13,7 +13,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ciaranm/inkpot'
+Plugin 'tjensen/inkpot'
 Plugin 'scrooloose/syntastic'
 Plugin 'linediff.vim'
 Plugin 'vim-airline/vim-airline'
@@ -26,14 +26,16 @@ Plugin 'vim-scripts/vim-coffee-script'
 Plugin 'hashivim/vim-terraform'
 Plugin 'PProvost/vim-ps1'
 Plugin 'tjensen/vim-enforce'
+Plugin 'guns/xterm-color-table.vim'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
 
 " I like colors
 syntax on
-if has('win32') || has('win64')
+if has('vcon')
   " Windows 10 console now supports 24-bit color!
+  set termguicolors
   set t_Co=256
 endif
 if has("gui_running") || &t_Co > 16
