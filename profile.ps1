@@ -40,7 +40,7 @@ function pvm
 
         if ($Script:currentPythonPath -ne $null)
         {
-            $parts = $parts.Where({ !($_.StartsWith($Script:currentPythonPath)) })
+            $parts = $parts.Where({ $_ -ne $Script:currentPythonPath -and $_ -ne "$Script:currentPythonPath\Scripts" })
         }
 
         $Script:currentPythonPath = $pvmPaths[$Id]
