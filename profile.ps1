@@ -15,6 +15,8 @@ function Prompt
     $prompt
 }
 
+$Script:currentPythonPath = $null
+
 function pvm
 {
 <#
@@ -34,9 +36,18 @@ function pvm
 
     if ($pvmPaths.ContainsKey($Id))
     {
-        $base = $pvmPaths[$Id]
+        $parts = $Env:Path -Split ";"
 
-        Set-Item -Path Env:Path -Value "$base;$base\Scripts;$Env:Path"
+        if ($Script:currentPythonPath -ne $null)
+        {
+            $parts = $parts.Where({ !($_.StartsWith($Script:currentPythonPath)) })
+        }
+
+        $Script:currentPythonPath = $pvmPaths[$Id]
+
+        $parts = @("$Script:currentPythonPath", "$Script:currentPythonPath\Scripts") + $parts
+
+        $Env:Path = $parts -Join ";"
     }
     else
     {
