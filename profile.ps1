@@ -6,7 +6,13 @@ function Prompt
 
     $ESC = [char]27
 
-    "$ESC[0mPS [$ESC[36m$(Get-Date -format HH:mm)$ESC[0m] $ESC[1m${pwd}$ESC[0m> "
+    $prompt = "$ESC[0mPS [$ESC[36m$(Get-Date -format HH:mm)$ESC[0m]"
+    if (Get-Command Write-VcsStatus -ErrorAction SilentlyContinue)
+    {
+        $prompt += (Write-VcsStatus)
+    }
+    $prompt += " $ESC[1m${pwd}$ESC[0m> "
+    $prompt
 }
 
 function pvm
