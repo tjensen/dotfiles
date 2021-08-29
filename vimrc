@@ -133,6 +133,9 @@ if !empty(glob('node_modules/.bin/eslint'))
   let g:syntastic_html_eslint_exec = 'node_modules/.bin/eslint'
 endif
 let g:syntastic_python_checkers = ['flake8']
+if filereadable('mypy.ini')
+  let g:syntastic_python_checkers = add(g:syntastic_python_checkers, 'mypy')
+endif
 let g:syntastic_python_python_exec = 'python'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
