@@ -55,6 +55,11 @@ function pvm
     }
 }
 
+if (@($pvmPaths.PSbase.Keys).Length -gt 0)
+{
+    pvm @($pvmPaths.PSbase.Keys)[0]
+}
+
 function workon
 {
 <#
