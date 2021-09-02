@@ -27,6 +27,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'PProvost/vim-ps1'
 Plugin 'tjensen/vim-enforce'
 Plugin 'guns/xterm-color-table.vim'
+Plugin 'cespare/vim-toml'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
