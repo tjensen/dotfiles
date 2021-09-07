@@ -55,9 +55,9 @@ function pvm
     }
 }
 
-if (@($pvmPaths.PSbase.Keys).Length -gt 0)
+if ("$defaultPython" -ne "")
 {
-    pvm @($pvmPaths.PSbase.Keys)[0]
+    pvm "$defaultPython"
 }
 
 function workon
