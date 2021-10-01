@@ -121,6 +121,8 @@ function mkvirtualenv
     )
 
     python.exe -m venv "$Home\.virtualenvs\$Name"
+
+    workon "$Name"
 }
 
 function mkv
