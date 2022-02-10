@@ -1,5 +1,7 @@
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
+Set-PSReadlineOption -EditMode vi
+
 function Prompt
 {
     $host.ui.RawUI.WindowTitle = [io.path]::GetFileName($pwd)
