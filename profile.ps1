@@ -1,6 +1,6 @@
-Set-PSReadlineKeyHandler -Key Tab -Function Complete
-
 Set-PSReadlineOption -EditMode vi
+
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
 function Prompt
 {
