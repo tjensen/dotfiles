@@ -54,6 +54,8 @@ set laststatus=2
 set backspace=indent,eol,start
 " Show line numbers
 set number numberwidth=6
+" Don't pester me when using netrw
+let g:netrw_silent = 1
 "
 set encoding=utf-8
 set modeline modelines=5
