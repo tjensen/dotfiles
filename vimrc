@@ -123,6 +123,9 @@ let g:vim_markdown_folding_disabled = 1
 " C stuff
 autocmd FileType c setlocal textwidth=99 colorcolumn=101
 
+" Ruby stuff
+autocmd BufRead,BufNewFile Fastfile set filetype=ruby
+
 " Syntastic
 let g:syntastic_html_checkers = []
 if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc')
