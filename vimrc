@@ -107,6 +107,10 @@ autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.js match BadWhitespace /\s\+$/
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal colorcolumn=101 textwidth=99
 
+" Typescript stuff
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript setlocal colorcolumn=101 textwidth=99
+
 " Coffeescript stuff
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType coffee setlocal colorcolumn=101 textwidth=99
