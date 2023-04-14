@@ -134,7 +134,7 @@ autocmd BufRead,BufNewFile Fastfile set filetype=ruby
 
 " Syntastic
 let g:syntastic_html_checkers = []
-if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc')
+if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc') || filereadable('.eslintrc.cjs')
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_html_checkers = ['eslint']
 endif
