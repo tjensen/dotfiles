@@ -28,6 +28,7 @@ Plugin 'PProvost/vim-ps1'
 Plugin 'tjensen/vim-enforce'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
@@ -131,6 +132,10 @@ autocmd FileType c setlocal textwidth=99 colorcolumn=101
 
 " Ruby stuff
 autocmd BufRead,BufNewFile Fastfile set filetype=ruby
+
+" Rust stuff
+autocmd FileType rust setlocal textwidth=99 colorcolumn=101
+let g:rustfmt_autosave = 1
 
 " Syntastic
 let g:syntastic_html_checkers = []
