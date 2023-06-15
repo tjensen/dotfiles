@@ -125,7 +125,11 @@ autocmd FileType objc setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType objc setlocal colorcolumn=101 textwidth=99
 
 " Markdown stuff
+autocmd FileType markdown setlocal spell spelllang=en_us
 let g:vim_markdown_folding_disabled = 1
+
+" Text stuff
+autocmd FileType text setlocal spell spelllang=en_us
 
 " C stuff
 autocmd FileType c setlocal textwidth=99 colorcolumn=101
