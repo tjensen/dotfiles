@@ -29,6 +29,7 @@ Plugin 'tjensen/vim-enforce'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
+" Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 filetype plugin indent on
 """" End Vundle Setup Requirements
@@ -145,10 +146,12 @@ let g:rustfmt_autosave = 1
 let g:syntastic_html_checkers = []
 if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc') || filereadable('.eslintrc.cjs')
   let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_typescript_checkers = ['eslint']
   let g:syntastic_html_checkers = ['eslint']
 endif
 if !empty(glob('node_modules/.bin/eslint'))
   let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+  let g:syntastic_typescript_eslint_exec = 'node_modules/.bin/eslint'
   let g:syntastic_html_eslint_exec = 'node_modules/.bin/eslint'
 endif
 let g:syntastic_python_checkers = ['flake8']
