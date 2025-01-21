@@ -142,8 +142,11 @@ autocmd BufRead,BufNewFile Fastfile set filetype=ruby
 autocmd FileType rust setlocal textwidth=99 colorcolumn=101
 let g:rustfmt_autosave = 1
 
+" ALE
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Airline
 let g:airline_detect_paste=1
