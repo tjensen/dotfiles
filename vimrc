@@ -14,7 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tjensen/inkpot'
-Plugin 'scrooloose/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'linediff.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'powerline/fonts'
@@ -142,37 +142,14 @@ autocmd BufRead,BufNewFile Fastfile set filetype=ruby
 autocmd FileType rust setlocal textwidth=99 colorcolumn=101
 let g:rustfmt_autosave = 1
 
-" Syntastic
-let g:syntastic_html_checkers = []
-if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc') || filereadable('.eslintrc.cjs') || filereadable('eslint.config.js') || filereadable('eslint.config.mjs')
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_typescript_checkers = ['eslint']
-  " When do I really need this?
-  " let g:syntastic_html_checkers = ['eslint']
-endif
-if !empty(glob('node_modules/.bin/eslint'))
-  let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
-  let g:syntastic_typescript_eslint_exec = 'node_modules/.bin/eslint'
-  let g:syntastic_html_eslint_exec = 'node_modules/.bin/eslint'
-endif
-let g:syntastic_python_checkers = ['flake8']
-if filereadable('mypy.ini')
-  let g:syntastic_python_checkers = add(g:syntastic_python_checkers, 'mypy')
-endif
-let g:syntastic_python_python_exec = 'python'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
 
 " Airline
 let g:airline_detect_paste=1
 let g:airline_inactive_collapse=1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#syntastic#enabled=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
