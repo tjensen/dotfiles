@@ -144,10 +144,11 @@ let g:rustfmt_autosave = 1
 
 " Syntastic
 let g:syntastic_html_checkers = []
-if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc') || filereadable('.eslintrc.cjs')
+if filereadable('.eslintrc.js') || filereadable('.eslintrc.yaml') || filereadable('.eslintrc.yml') || filereadable('.eslintrc.json') || filereadable('.eslintrc') || filereadable('.eslintrc.cjs') || filereadable('eslint.config.js') || filereadable('eslint.config.mjs')
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_typescript_checkers = ['eslint']
-  let g:syntastic_html_checkers = ['eslint']
+  " When do I really need this?
+  " let g:syntastic_html_checkers = ['eslint']
 endif
 if !empty(glob('node_modules/.bin/eslint'))
   let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
