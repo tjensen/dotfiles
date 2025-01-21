@@ -23,19 +23,12 @@ function timer_stop {
     unset timer
 }
 
-function new_line_prompt {
-    IFS='[;' read -p $'\e[6n' -d R -rs _ y x _
-    if [[ "$x" != 1 ]]; then
-        echo
-    fi
-}
-
 trap 'timer_start' DEBUG
 
 if [ "$PROMPT_COMMAND" == "" ]; then
-    PROMPT_COMMAND="new_line_prompt; timer_stop;"
+    PROMPT_COMMAND="timer_stop;"
 else
-    PROMPT_COMMAND="new_line_prompt; $PROMPT_COMMAND timer_stop;"
+    PROMPT_COMMAND="$PROMPT_COMMAND timer_stop;"
 fi
 
 shopt -s promptvars
