@@ -14,6 +14,7 @@ alias mkv='mkvirtualenv $(basename $PWD)'
 alias docker-clean='docker ps -a | grep '\''weeks ago'\'' | awk '\''{print }'\'' | xargs docker rm'
 alias docker-env='eval $(minikube docker-env)'
 alias ecr-login='eval $(aws ecr get-login --no-include-email)'
+alias podme='podman run --mount=type=bind,src=$HOME,dst=$HOME -it -w $PWD --privileged'
 
 function show-cert {
     if [ -z "$1" ]
