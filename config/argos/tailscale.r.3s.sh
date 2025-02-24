@@ -16,7 +16,7 @@ fi
 if [ "$(echo ${status} | jq --raw-output .BackendState)" = "Stopped" ]; then
     echo "${ICON_INACTIVE} VPN down"
     echo "---"
-    echo "Connect | bash='tailscale up' terminal=false refresh=true"
+    echo "Connect | bash='tailscale up --accept-routes' terminal=false refresh=true"
     exit 0
 fi
 
