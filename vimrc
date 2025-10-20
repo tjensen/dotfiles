@@ -29,6 +29,7 @@ Plugin 'tjensen/vim-enforce'
 Plugin 'guns/xterm-color-table.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
+Plugin 'udalov/kotlin-vim'
 " Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 filetype plugin indent on
@@ -141,6 +142,10 @@ autocmd BufRead,BufNewFile Fastfile set filetype=ruby
 " Rust stuff
 autocmd FileType rust setlocal textwidth=99 colorcolumn=101
 let g:rustfmt_autosave = 1
+
+" Kotlin stuff
+autocmd FileType kotlin setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType kotlin setlocal textwidth=99 colorcolumn=101
 
 " ALE
 let g:ale_set_quickfix = 1
