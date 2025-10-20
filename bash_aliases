@@ -35,5 +35,10 @@ function cert-validity {
     fi
 }
 
+function myip {
+    curl -4 https://ip.me
+    curl -6 https://ip.me
+}
+
 # Allow for system-specific aliases that shouldn't be shared everywhere
 [ -e "$HOME/.bash_aliases_local" ] && source "$HOME/.bash_aliases_local"
