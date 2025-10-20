@@ -26,5 +26,14 @@ function show-cert {
     fi
 }
 
+function cert-validity {
+    if [ -z "$1" ]
+    then
+        1>&2 echo "Hostname required"
+    else
+        openssl s_client -showcerts -servername $1 -connect $1:443 </dev/null 2>/dev/null | openssl x509 -inform pem -noout -dates
+    fi
+}
+
 # Allow for system-specific aliases that shouldn't be shared everywhere
 [ -e "$HOME/.bash_aliases_local" ] && source "$HOME/.bash_aliases_local"
