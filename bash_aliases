@@ -8,7 +8,8 @@ alias gca='git commit -v -a'
 alias gci='git commit --interactive'
 alias gd='git diff'
 
-alias wo='workon $(basename $PWD)'
+alias wo='eval $(poetry env activate)'
+alias wo2='workon $(basename $PWD)'
 alias mkv='mkvirtualenv $(basename $PWD)'
 
 alias docker-clean='docker ps -a | grep '\''weeks ago'\'' | awk '\''{print }'\'' | xargs docker rm'
