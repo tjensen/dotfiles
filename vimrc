@@ -30,6 +30,7 @@ Plugin 'guns/xterm-color-table.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
 Plugin 'udalov/kotlin-vim'
+Plugin 'othree/html5.vim'
 " Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 filetype plugin indent on
