@@ -5,6 +5,8 @@
 ICON_ACTIVE=""
 ICON_INACTIVE=""
 
+export SUDO_ASKPASS=/usr/bin/ssh-askpass
+
 status=$(curl --silent --fail --unix-socket /var/run/tailscale/tailscaled.sock http://local-tailscaled.sock/localapi/v0/status)
 
 # bail out if curl had non-zero exit code
@@ -12,11 +14,20 @@ if [ $? != 0 ]; then
     exit 0
 fi
 
+now=$(date +%s)
+expiry=$(date --date="$(echo ${status} | jq --raw-output .Self.KeyExpiry)" +%s)
+
 # check if it's stopped (down)
 if [ "$(echo ${status} | jq --raw-output .BackendState)" = "Stopped" ]; then
     echo "${ICON_INACTIVE} VPN down"
     echo "---"
     echo "Connect | bash='tailscale up --accept-routes' terminal=false refresh=true"
+    exit 0
+# check if key has expired, requiring a fresh login
+elif [ "${expiry}" -le "${now}" ]; then
+    echo "${ICON_INACTIVE} VPN expired"
+    echo "---"
+    echo "Login | bash='sudo --askpass tailscale login --accept-routes' terminal=false refresh=true"
     exit 0
 fi
 
@@ -29,6 +40,7 @@ else
 fi
 
 echo "---"
+echo "Key expires in: $((${expiry} - ${now}))s"
 echo "Disconnect | bash='tailscale down' terminal=false refresh=true"
 echo "---"
 echo "Exit node"
