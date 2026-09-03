@@ -41,7 +41,7 @@ function show-cert {
     then
         1>&2 echo "Hostname required"
     else
-        if [ "$CONNECT" != *:* ]
+        if [[ "$CONNECT" != *:* ]]
         then
             local CONNECT="$CONNECT:443"
         fi
