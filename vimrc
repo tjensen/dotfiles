@@ -148,6 +148,9 @@ let g:rustfmt_autosave = 1
 autocmd FileType kotlin setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType kotlin setlocal textwidth=99 colorcolumn=101
 
+" sqlx
+autocmd BufRead,BufNewFile *.sqlx set filetype=sql
+
 " ALE
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
